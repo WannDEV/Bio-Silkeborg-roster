@@ -1,0 +1,49 @@
+.navbar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background-color: #151515;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.logo {
+  max-width: none;
+  width: 12rem !important;
+  height: auto;
+}
+
+.navbarLinks {
+  display: flex;
+  margin-right: 3rem;
+}
+
+.navbarLink {
+  margin-right: 1rem;
+  color: #fff;
+  padding: 1rem 2rem;
+
+}
+
+.navbarLink:hover {
+  background-color: #920300;
+}
+
+@media only screen and (max-width: 600px) {
+  .logo {
+    width: 6rem !important;
+  }
+
+  .navbar {
+    padding: 0 0.5rem;
+  }
+
+  .navbarLinks {
+    margin-right: 0.5rem;
+  }
+
+  .navbarLink {
+    margin-right: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+}

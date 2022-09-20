@@ -6,14 +6,68 @@
 .header {
   color: #fff;
   background-color: #808080;
-  padding: 0.7rem 0;
+  padding: 0.7rem;
+  text-align: start;
+  font-weight: 400;
 }
 
 .tbody {
   color: #fff;
-  text-align: center;
+  text-align: start;
+  font-weight: 600;
 }
 
 .tbody tr:nth-child(odd) {
   background-color: #151515;
+}
+
+.td {
+  padding: 0.8rem 0.7rem;
+}
+
+.rosterNavigation {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  color: #fff;
+  align-items: center;
+}
+
+.arrows {
+  margin: 0.2rem 0;
+  color: #fff;
+}
+
+.box {
+  margin: 0.5rem 0 3rem 0;
+}
+
+.dateSpan {
+  display: inline;
+}
+
+.noShiftsBox {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.noShiftsText {
+  color: #fff;
+  font-size: 1rem;
+}
+
+@media only screen and (max-width: 750px) {
+  .box {
+    margin: 0.5rem 1rem 3rem 1rem;
+  }
+
+  .tbody, .header {
+    font-size: 0.9rem;
+  }
+
+  .dateSpan {
+    display: block;
+  }
 }

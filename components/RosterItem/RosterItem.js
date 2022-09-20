@@ -27,7 +27,14 @@ const RosterItem = (props) => {
   ][getDay(new Date(day.date))];
 
   return (
-    <div className={styles.rosterItem}>
+    <div
+      className={styles.rosterItem}
+      ref={
+        format(new Date(), "dd/MM/yyyy") == format(day.date, "dd/MM/yyyy")
+          ? props.todayRef
+          : null
+      }
+    >
       <div
         className={styles.headerBox}
         style={{

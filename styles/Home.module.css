@@ -3,6 +3,10 @@
   padding: 1rem 2rem;
 }
 
+.top {
+  padding: 0;
+}
+
 .footer {
   text-align: center;
   color: #808080;
@@ -35,10 +39,43 @@ font-size: 2rem;
   color: #fff;
   border-radius: 5px;
   font-weight: 500;
+  text-align: center;
 }
 
 .subtitle {
   width: 100%;
   text-align: center;
   color: #fff;
+  font-size: 2rem;
+}
+
+.todayButton {
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.todayBox {
+  display: none;
+}
+
+@media only screen and (max-width: 750px) {
+  .main {
+    padding: 0.5rem 0;
+  }
+
+  .top {
+    padding: 0 2rem;
+  }
+
+  .todayBox {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 0.3rem 0;
+  }
 }

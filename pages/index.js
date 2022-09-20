@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Roster from "../components/Roster/Roster";
 import ShiftsOverview from "../components/ShiftsOverview/ShiftsOverview";
 
@@ -174,6 +174,10 @@ export default function Home() {
   const [weekRoster, setWeekRoster] = useState([]);
   const [weekIndex, setWeekIndex] = useState([]);
   const [initials, setInitials] = useState("");
+  const todayRef = useRef(null);
+
+  const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop - 150);
+  const executeScroll = () => scrollToRef(todayRef);
 
   useEffect(() => {
     const main = async () => {
@@ -222,26 +226,34 @@ export default function Home() {
         <meta name="description" content="Vagtplan for Silkeborg bio" />
       </Head>
       <main className={styles.main}>
-        <h1 className={styles.title}>Vagtplan</h1>
-        <hr className={styles.titleLine} />
-        <div className={styles.initialsBox}>
-          <h3 className={styles.initialsHeader}>
-            Indtast initialer for at finde dine vagter:
-          </h3>
-          <input
-            value={initials}
-            onChange={(event) => handleInitialsChange(event)}
-            className={styles.initialsInput}
-            placeholder="Initialer..."
-            maxLength="2"
-          />
+        <div className={styles.top}>
+          <h1 className={styles.title}>Vagtplan</h1>
+          <hr className={styles.titleLine} />
+          <div className={styles.initialsBox}>
+            <h3 className={styles.initialsHeader}>
+              Indtast initialer for at finde dine vagter:
+            </h3>
+            <input
+              value={initials}
+              onChange={(event) => handleInitialsChange(event)}
+              className={styles.initialsInput}
+              placeholder="Initialer..."
+              maxLength="2"
+            />
+          </div>
         </div>
         <h2 className={styles.subtitle}>Skema</h2>
+        <div className={styles.todayBox}>
+          <button onClick={executeScroll} className={styles.todayButton}>
+            Gå til i dag
+          </button>
+        </div>
         {weekRoster.length != 0 && weekIndex.length != 0 && (
           <Roster
             weekRoster={weekRoster}
             weekIndex={weekIndex}
             initials={initials}
+            todayRef={todayRef}
           />
         )}
         <h2 className={styles.subtitle}>Overblik</h2>

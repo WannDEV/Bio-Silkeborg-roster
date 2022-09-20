@@ -36,7 +36,12 @@ const Roster = (props) => {
         {weekRoster.length != 0 &&
           weekIndex.length != 0 &&
           weekRoster[weekIndex].map((day, i) => (
-            <RosterItem day={day} initials={initials} key={i} />
+            <RosterItem
+              day={day}
+              initials={initials}
+              key={i}
+              todayRef={props.todayRef}
+            />
           ))}
       </div>
       <div className={styles.rosterOuterNavigation}>

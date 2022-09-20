@@ -1,6 +1,7 @@
 .roster {
   display: flex;
   width: 100%;
+  flex-direction: row;
 }
 
 .rosterNavigation {
@@ -31,4 +32,10 @@
 
 .todayButtonIcon {
   color: #fff;
+}
+
+@media only screen and (max-width: 750px) {
+  .roster {
+    flex-direction: column;
+  }
 }
